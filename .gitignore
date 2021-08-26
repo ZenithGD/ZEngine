@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/bin-int
+/bin
+/.vs/ZEngine/v16
