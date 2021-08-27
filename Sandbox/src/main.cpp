@@ -1,7 +1,18 @@
-namespace ZEngine {
-	__declspec(dllimport) void print();
-}
+#include <ZEngine.h>
 
-int main() {
-	ZEngine::print();
+class Sandbox : public ZEngine::Application
+{
+public:
+	Sandbox()
+	{
+
+	}
+	~Sandbox() 
+	{
+
+	}
+};
+
+ZEngine::Application* ZEngine::CreateApplication() {
+	return new Sandbox();
 }
