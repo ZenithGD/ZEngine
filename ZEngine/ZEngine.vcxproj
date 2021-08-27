@@ -59,6 +59,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ZE_PLATFORM_WINDOWS;ZE_BUILD_DLL;ZE_BUILD_DLL_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ZEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -73,6 +74,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ZE_PLATFORM_WINDOWS;ZE_BUILD_DLL;ZE_BUILD_DLLNDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ZEngine\vendor\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,9 +84,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ZEngine\Log.cpp" />
     <ClCompile Include="src\ZEngine\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ZEngine\Log.h" />
     <ClInclude Include="src\ZEngine.h" />
     <ClInclude Include="src\ZEngine\Application.h" />
     <ClInclude Include="src\ZEngine\Core.h" />
