@@ -23,6 +23,7 @@ project "ZEngine"
     }
 
     includedirs {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
@@ -66,8 +67,8 @@ project "Sandbox"
     }
 
     includedirs {
+        "ZEngine/src",
         "ZEngine/vendor/spdlog/include",
-        "ZEngine/src"
     }
 
     links {

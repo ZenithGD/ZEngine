@@ -4,6 +4,9 @@
     <Filter Include="ZEngine">
       <UniqueIdentifier>{55BCADBC-C19B-2C58-CAB3-B72E361293B9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ZEngine\Events">
+      <UniqueIdentifier>{9996B3AD-8564-A7B3-6EF8-17DA5A658318}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ZEngine.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\ZEngine\EntryPoint.h">
       <Filter>ZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZEngine\Events\ApplicationEvent.h">
+      <Filter>ZEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZEngine\Events\Event.h">
+      <Filter>ZEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZEngine\Events\KeyEvent.h">
+      <Filter>ZEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZEngine\Events\MouseEvent.h">
+      <Filter>ZEngine\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\ZEngine\Log.h">
       <Filter>ZEngine</Filter>

@@ -9,3 +9,5 @@
 #else
 	#error ZEngine only supports Windows (for now)
 #endif
+
+#define MARK_BIT(i) (1 << i)
