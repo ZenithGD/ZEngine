@@ -1,25 +1,21 @@
 #include "zepch.h"
 
 #include "Application.h"
-
-#include "ZEngine/Log.h"
-#include "ZEngine/Events/MouseEvent.h"
-#include "ZEngine/Events/ApplicationEvent.h"
-#include "ZEngine/Events/KeyEvent.h"
+#include "ZEngine/Window.h"
 
 namespace ZEngine {
 	Application::Application() {
-
+		_wptr = std::unique_ptr<Window>(Window::create());
 	}
 
 	Application::~Application() {
-
+		
 	}
 
-	void Application::Run() {
+	void Application::run() {
 		
-		while (true) {
-
+		while (_running) {
+			_wptr->onUpdate();
 		}
 	}
 }

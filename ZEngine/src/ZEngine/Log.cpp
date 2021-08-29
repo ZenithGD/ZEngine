@@ -8,7 +8,7 @@ namespace ZEngine {
 	std::shared_ptr<spdlog::logger> Log::_core_logger;
 	std::shared_ptr<spdlog::logger> Log::_client_logger;
 	
-	void Log::Init() {
+	void Log::init() {
 		// Set colour, timestamp, logger name and log message
 		spdlog::set_pattern("%^[%T] %n: %v%$");
 		_core_logger = spdlog::stdout_color_mt("ZEngine");

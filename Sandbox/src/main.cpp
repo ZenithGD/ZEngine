@@ -13,6 +13,6 @@ public:
 	}
 };
 
-ZEngine::Application* ZEngine::CreateApplication() {
+ZEngine::Application* ZEngine::createApplication() {
 	return new Sandbox();
 }

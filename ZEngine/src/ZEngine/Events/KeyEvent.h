@@ -13,7 +13,7 @@ namespace ZEngine {
 			: _keycode(keycode) {}
 
 	public:
-		inline int GetKeyCode() const { return _keycode;  }
+		inline int getKeyCode() const { return _keycode;  }
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	};
@@ -26,7 +26,7 @@ namespace ZEngine {
 		KeyPressedEvent(int keycode, int count)
 			: KeyEvent(keycode), _repeat_count(count) {}
 
-		inline int GetRepeatCount() const { return _repeat_count; }
+		inline int getRepeatCount() const { return _repeat_count; }
 
 		std::string to_string() const override {
 			std::ostringstream os;

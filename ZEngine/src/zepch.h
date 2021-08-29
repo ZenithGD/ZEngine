@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "ZEngine/Log.h"
+
 #ifdef ZE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

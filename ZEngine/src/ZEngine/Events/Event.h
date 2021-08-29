@@ -26,11 +26,11 @@ namespace ZEngine {
 		EventCategoryMouse		 = MARK_BIT(4)
 	};
 	
-#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
-							   virtual EventType GetEventType() const override { return GetStaticType(); }\
-							   virtual const char* GetName() const override { return #type; }
+#define EVENT_CLASS_TYPE(type) static EventType getStaticType() { return EventType::##type; }\
+							   virtual EventType getEventType() const override { return getStaticType(); }\
+							   virtual const char* getName() const override { return #type; }
 
-#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
+#define EVENT_CLASS_CATEGORY(category) virtual int getCategoryFlags() const override { return category; }
 
 	class ZENGINE_API Event {
 	private:
@@ -40,19 +40,19 @@ namespace ZEngine {
 		bool _handled = false;
 	public:
 		// Returns the event type
-		virtual EventType GetEventType() const = 0;
+		virtual EventType getEventType() const = 0;
 
 		// Returns the name of the event
-		virtual const char* GetName() const = 0;
+		virtual const char* getName() const = 0;
 
 		// Get category bitset for current event
-		virtual int GetCategoryFlags() const = 0;
+		virtual int getCategoryFlags() const = 0;
 
 		// Return a string representation of the event's name
-		virtual std::string to_string() const { return GetName(); }
+		virtual std::string to_string() const { return getName(); }
 
 		// Returns true if the event is included in <category>
-		inline bool IsInCategory(ZEngine::EventCategory category) { return category & GetCategoryFlags(); }
+		inline bool isInCategory(ZEngine::EventCategory category) { return category & getCategoryFlags(); }
 	};
 
 	// Dispatcher for any kind of event
@@ -67,8 +67,8 @@ namespace ZEngine {
 		EventDispatcher(Event& event)
 			: _event(event) {}
 		template <typename T>
-		bool Dispatch(EventFunc<T> func) {
-			if (_event.GetEventType() == T::GetStaticType()) {
+		bool dispatch(EventFunc<T> func) {
+			if (_event.getEventType() == T::getStaticType()) {
 				_event._handled = func(*(T*)&_event);
 				return true;
 			}

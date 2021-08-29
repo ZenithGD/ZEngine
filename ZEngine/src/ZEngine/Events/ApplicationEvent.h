@@ -9,8 +9,8 @@ namespace ZEngine {
 	public:
 		WindowResizeEvent(int resX, int resY) 
 			: _resX(resX), _resY(resY) {}
-		inline int GetResX () const { return _resX; }
-		inline int GetResY () const { return _resY; }
+		inline int getResX () const { return _resX; }
+		inline int getResY () const { return _resY; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)
 		EVENT_CLASS_TYPE(WindowResize)

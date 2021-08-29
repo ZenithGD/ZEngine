@@ -10,7 +10,7 @@ namespace ZEngine {
 		MouseButtonEvent(int button)
 			: _button(button) {}
 	public:
-		inline int GetButton() const { return _button; }
+		inline int getButton() const { return _button; }
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryMouseButton | EventCategoryInput)
 	};
 
@@ -44,8 +44,8 @@ namespace ZEngine {
 	public:
 		MouseMovedEvent(float posX, float posY) 
 			: _posX(posX), _posY(posY) {}
-		inline float GetX() const { return _posX; }
-		inline float GetY() const { return _posY; }
+		inline float getX() const { return _posX; }
+		inline float getY() const { return _posY; }
 
 		std::string to_string() const override {
 			std::ostringstream os;
@@ -62,8 +62,8 @@ namespace ZEngine {
 	public:
 		MouseScrolledEvent(float posX, float posY)
 			: _offX(posX), _offY(posY) {}
-		inline float GetOffX() const { return _offX; }
-		inline float GetOffY() const { return _offY; }
+		inline float getOffX() const { return _offX; }
+		inline float getOffY() const { return _offY; }
 
 		std::string to_string() const override {
 			std::ostringstream os;
