@@ -7,9 +7,12 @@ This game engine is a personal project for learning about game development and g
 ## Components
 * Logging class for development
 * Event system
+
   Here's the class hierarchy for the event system. Note that only final classes can be instantiated:
   
   ![EventSystem](https://user-images.githubusercontent.com/37598162/131226737-4f2bf62e-4e71-48f2-970d-90db38eaafcb.png)
+  
+* Window abstraction
 
 ## How to build the project
 
@@ -27,4 +30,6 @@ It will generate a Visual studio 2019 with all the needed configurations.
   * Added logging frontend (using the [spdlog](https://github.com/gabime/spdlog) library)
   * Added the [Premake](https://github.com/premake/premake-core) build system and premake5.lua script
 * 28/08/2021:
-  * Added an event system 
+  * Added an event system
+* 30/08/2021:
+  * Added window abstraction, implementation for Windows and GLFW support
