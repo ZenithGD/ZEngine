@@ -34,6 +34,7 @@
     <ClInclude Include="src\ZEngine\Log.h">
       <Filter>ZEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\zepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ZEngine\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\ZEngine\Log.cpp">
       <Filter>ZEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\zepch.cpp" />
   </ItemGroup>
 </Project>

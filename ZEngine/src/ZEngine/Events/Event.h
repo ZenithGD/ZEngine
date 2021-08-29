@@ -2,9 +2,6 @@
 
 #include "ZEngine/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace ZEngine {
 	// Events are blocking, so any event gets dispatched inmediately
 	// and must be dealt with right after dispatching.

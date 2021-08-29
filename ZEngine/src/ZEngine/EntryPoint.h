@@ -1,5 +1,4 @@
- #pragma once
-#include <iostream>
+#pragma once
 
 #ifdef ZE_PLATFORM_WINDOWS
 

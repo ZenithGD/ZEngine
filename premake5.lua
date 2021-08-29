@@ -6,7 +6,6 @@ workspace "ZEngine"
         "Release",
         "Dist"
     }
-
 out_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "ZEngine"
@@ -16,6 +15,9 @@ project "ZEngine"
 
     targetdir ("bin/" .. out_dir .. "/%{prj.name}")
     objdir ("bin-int/" .. out_dir .. "/%{prj.name}")
+
+    pchheader "zepch.h"
+    pchsource "ZEngine/src/zepch.cpp"
 
     files {
         "%{prj.name}/src/**.h",
