@@ -8,6 +8,11 @@ workspace "ZEngine"
     }
 out_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+include_dirs = {}
+include_dirs["GLFW"] = "ZEngine/vendor/GLFW/include"
+
+include "ZEngine/vendor/GLFW"
+
 project "ZEngine"
     location "ZEngine"
     kind "SharedLib"
@@ -26,7 +31,14 @@ project "ZEngine"
 
     includedirs {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{include_dirs.GLFW}"
+    }
+
+    -- link static libraries to ZEngine
+    links {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"
