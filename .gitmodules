@@ -1,3 +1,6 @@
 [submodule "ZEngine/vendor/spdlog"]
 	path = ZEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "ZEngine/vendor/GLFW"]
+	path = ZEngine/vendor/GLFW
+	url = https://github.com/ZenithGD/glfw.git
