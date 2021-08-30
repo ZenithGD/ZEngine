@@ -18,6 +18,9 @@ project "ZEngine"
     kind "SharedLib"
     language "C++"
 
+    -- Multithreaded DLL version
+    staticruntime "off"
+
     targetdir ("bin/" .. out_dir .. "/%{prj.name}")
     objdir ("bin-int/" .. out_dir .. "/%{prj.name}")
 
