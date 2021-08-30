@@ -44,6 +44,8 @@
       <Filter>ZEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\zepch.h" />
+    <ClInclude Include="src\ZEngine\LayerStack.h" />
+    <ClInclude Include="src\ZEngine\Layer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\WindowsWindow.cpp">
@@ -56,5 +58,7 @@
       <Filter>ZEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\zepch.cpp" />
+    <ClCompile Include="src\ZEngine\LayerStack.cpp" />
+    <ClCompile Include="src\ZEngine\Layer.cpp" />
   </ItemGroup>
 </Project>

@@ -158,6 +158,8 @@
     <ClInclude Include="src\ZEngine\Events\Event.h" />
     <ClInclude Include="src\ZEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\ZEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\ZEngine\Layer.h" />
+    <ClInclude Include="src\ZEngine\LayerStack.h" />
     <ClInclude Include="src\ZEngine\Log.h" />
     <ClInclude Include="src\ZEngine\Window.h" />
     <ClInclude Include="src\zepch.h" />
@@ -165,6 +167,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\WindowsWindow.cpp" />
     <ClCompile Include="src\ZEngine\Application.cpp" />
+    <ClCompile Include="src\ZEngine\Layer.cpp" />
+    <ClCompile Include="src\ZEngine\LayerStack.cpp" />
     <ClCompile Include="src\ZEngine\Log.cpp" />
     <ClCompile Include="src\zepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
