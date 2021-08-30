@@ -30,6 +30,12 @@ $> git submodule add <submodule_repo_link> ZEngine/vendor/<submodule_name>
 
 After that, if you need to link any static library from that submodule, don't forget to add it into the main premake5.lua script at the root of the project.
 
+
+### Update submodules
+If you need to update the submodules required by ZEngine to work, type the following command at the project's root folder:
+```
+git submodule update --recursive --remote
+```
 ## Dev Diary
 * 26/08/2021: 
   * Started the project!
@@ -41,3 +47,4 @@ After that, if you need to link any static library from that submodule, don't fo
   * Added an event system
 * 30/08/2021:
   * Added window abstraction, implementation for Windows and GLFW support
+  * Added window events and GLFW callbacks
