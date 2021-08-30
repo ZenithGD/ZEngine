@@ -21,7 +21,7 @@ namespace ZEngine {
 		void onUpdate() override;
 		void shutdown();
 
-		inline void setEvCallback(EventCallbackFun& fn) override { _wdata.fn = fn; }
+		inline void setEvCallback(const EventCallbackFun& fn) override { _wdata.fn = fn; }
 		void setVSync(bool enabled) override;
 		inline bool getVSync() const override { return _wdata.vsync; }
 

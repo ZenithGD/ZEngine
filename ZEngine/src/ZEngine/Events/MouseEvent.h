@@ -40,12 +40,12 @@ namespace ZEngine {
 
 	class ZENGINE_API MouseMovedEvent : public Event {
 	private:
-		float _posX, _posY;
+		double _posX, _posY;
 	public:
-		MouseMovedEvent(float posX, float posY) 
+		MouseMovedEvent(double posX, double posY) 
 			: _posX(posX), _posY(posY) {}
-		inline float getX() const { return _posX; }
-		inline float getY() const { return _posY; }
+		inline double getX() const { return _posX; }
+		inline double getY() const { return _posY; }
 
 		std::string to_string() const override {
 			std::ostringstream os;
@@ -58,12 +58,12 @@ namespace ZEngine {
 
 	class ZENGINE_API MouseScrolledEvent : public Event {
 	private:
-		float _offX, _offY;
+		double _offX, _offY;
 	public:
-		MouseScrolledEvent(float posX, float posY)
+		MouseScrolledEvent(double posX, double posY)
 			: _offX(posX), _offY(posY) {}
-		inline float getOffX() const { return _offX; }
-		inline float getOffY() const { return _offY; }
+		inline double getOffX() const { return _offX; }
+		inline double getOffY() const { return _offY; }
 
 		std::string to_string() const override {
 			std::ostringstream os;

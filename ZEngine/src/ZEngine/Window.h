@@ -23,7 +23,7 @@ namespace ZEngine {
 
 		virtual void onUpdate() = 0;
 
-		virtual void setEvCallback(EventCallbackFun& fn) = 0;
+		virtual void setEvCallback(const EventCallbackFun& fn) = 0;
 		virtual void setVSync(bool enabled) = 0;
 		virtual bool getVSync() const = 0;
 
