@@ -14,13 +14,21 @@ This game engine is a personal project for learning about game development and g
   
 * Window abstraction
 
-## How to build the project
+## Setup
 
 This project has a Premake script which can be launched as follows:
 ```
 GenerateProjects.bat
 ```
 It will generate a Visual studio 2019 with all the needed configurations.
+
+ZEngine also depends on two submodules, `spdlog` and a custom GLFW fork with an additional premake file. They are located in the `ZEngine/vendor` folder, so if you want to add your own submodules, you can write the following command in order to integrate them into the project:
+
+```
+$> git submodule add <submodule_repo_link> ZEngine/vendor/<submodule_name>
+```
+
+After that, if you need to link any static library from that submodule, don't forget to add it into the main premake5.lua script at the root of the project.
 
 ## Dev Diary
 * 26/08/2021: 
