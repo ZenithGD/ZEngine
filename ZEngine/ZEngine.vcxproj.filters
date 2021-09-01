@@ -37,6 +37,12 @@
     <ClInclude Include="src\ZEngine\Events\MouseEvent.h">
       <Filter>ZEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\ZEngine\Layer.h">
+      <Filter>ZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZEngine\LayerStack.h">
+      <Filter>ZEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\ZEngine\Log.h">
       <Filter>ZEngine</Filter>
     </ClInclude>
@@ -44,8 +50,6 @@
       <Filter>ZEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\zepch.h" />
-    <ClInclude Include="src\ZEngine\LayerStack.h" />
-    <ClInclude Include="src\ZEngine\Layer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\WindowsWindow.cpp">
@@ -54,11 +58,15 @@
     <ClCompile Include="src\ZEngine\Application.cpp">
       <Filter>ZEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\ZEngine\Layer.cpp">
+      <Filter>ZEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZEngine\LayerStack.cpp">
+      <Filter>ZEngine</Filter>
+    </ClCompile>
     <ClCompile Include="src\ZEngine\Log.cpp">
       <Filter>ZEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\zepch.cpp" />
-    <ClCompile Include="src\ZEngine\LayerStack.cpp" />
-    <ClCompile Include="src\ZEngine\Layer.cpp" />
   </ItemGroup>
 </Project>

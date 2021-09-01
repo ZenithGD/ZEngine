@@ -53,6 +53,9 @@ namespace ZEngine {
 
 		// Returns true if the event is included in <category>
 		inline bool isInCategory(ZEngine::EventCategory category) { return category & getCategoryFlags(); }
+
+		inline bool isHandled() const { return _handled; }
+		inline void setHandled() { _handled = true; }
 	};
 
 	// Dispatcher for any kind of event
