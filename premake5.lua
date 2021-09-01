@@ -6,6 +6,7 @@ workspace "ZEngine"
         "Release",
         "Dist"
     }
+
 out_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include_dirs = {}
