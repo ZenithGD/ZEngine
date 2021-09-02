@@ -7,6 +7,8 @@
 #include "ZEngine/Window.h"
 #include "WindowsWindow.h"
 
+#include <glad/glad.h>
+
 namespace ZEngine {
 	static bool _GLFWInitialized = false;
 
@@ -45,6 +47,10 @@ namespace ZEngine {
 		// Now configure the window
 		_window = glfwCreateWindow(_wdata.width, _wdata.height, _wdata.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(_window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ZE_CORE_ASSERT(status, "Failed to initialize GLAD");
+
 		glfwSetWindowUserPointer(_window, &_wdata);
 
 		// Enable VSync by default

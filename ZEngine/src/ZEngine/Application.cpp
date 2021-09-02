@@ -4,7 +4,7 @@
 #include "ZEngine/Window.h"
 #include "ZEngine/LayerStack.h"
 
-#include "GLFW/glfw3.h"
+#include <glad/glad.h>
 
 namespace ZEngine {
 

@@ -10,8 +10,10 @@ out_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 include_dirs = {}
 include_dirs["GLFW"] = "ZEngine/vendor/GLFW/include"
+include_dirs["GLAD"] = "ZEngine/vendor/GLAD/include"
 
 include "ZEngine/vendor/GLFW"
+include "ZEngine/vendor/GLAD"
 
 project "ZEngine"
     location "ZEngine"
@@ -35,12 +37,14 @@ project "ZEngine"
     includedirs {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{include_dirs.GLFW}"
+        "%{include_dirs.GLFW}",
+        "%{include_dirs.GLAD}"
     }
 
     -- link static libraries to ZEngine
     links {
         "GLFW",
+        "GLAD",
         "opengl32.lib"
     }
 
@@ -51,7 +55,8 @@ project "ZEngine"
 
         defines {
             "ZE_PLATFORM_WINDOWS",
-            "ZE_BUILD_DLL"
+            "ZE_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands {
