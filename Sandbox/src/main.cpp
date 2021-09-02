@@ -34,8 +34,7 @@ public:
 		pushLayer(std::make_shared<ExampleLayer>("Layer A"));
 		pushLayer(std::make_shared<ExampleLayer>("Layer B"));
 		pushLayer(std::make_shared<ExampleLayer>("Layer C"));
-		pushOverlay(std::make_shared<ExampleLayer>("Layer D"));
-		pushOverlay(std::make_shared<ExampleLayer>("Layer E"));
+		pushOverlay(std::make_shared<ZEngine::ImGuiLayer>());
 	}
 	~Sandbox() 
 	{
