@@ -42,9 +42,11 @@ git submodule update --recursive --remote
   * Added EntryPoint
 * 27/08/2021:
   * Added logging frontend (using the [spdlog](https://github.com/gabime/spdlog) library)
-  * Added the [Premake](https://github.com/premake/premake-core) build system and premake5.lua script
+  * Added [Premake](https://github.com/premake/premake-core) build system and premake5.lua script
 * 28/08/2021:
   * Added an event system
 * 30/08/2021:
   * Added window abstraction, implementation for Windows and GLFW support
   * Added window events and GLFW callbacks
+* 02/09/2021:
+  * Added application layers and layerstack for selective event handling and updating
