@@ -4,16 +4,28 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ZEngine">
       <UniqueIdentifier>{55BCADBC-C19B-2C58-CAB3-B72E361293B9}</UniqueIdentifier>
     </Filter>
     <Filter Include="ZEngine\Events">
       <UniqueIdentifier>{9996B3AD-8564-A7B3-6EF8-17DA5A658318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ZEngine\ImGui">
+      <UniqueIdentifier>{3F5D2991-AB1D-A5C7-7458-EE44E0D7E9A3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\WindowsWindow.h">
-      <Filter>Platform</Filter>
+    <ClInclude Include="src\Platform\OpenGL\imguiopengl3.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\ZEngine.h" />
     <ClInclude Include="src\ZEngine\Application.h">
@@ -37,6 +49,9 @@
     <ClInclude Include="src\ZEngine\Events\MouseEvent.h">
       <Filter>ZEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\ZEngine\ImGui\ImGuiLayer.h">
+      <Filter>ZEngine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\ZEngine\Layer.h">
       <Filter>ZEngine</Filter>
     </ClInclude>
@@ -52,11 +67,17 @@
     <ClInclude Include="src\zepch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\WindowsWindow.cpp">
-      <Filter>Platform</Filter>
+    <ClCompile Include="src\Platform\OpenGL\imguiopengl3.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\ZEngine\Application.cpp">
       <Filter>ZEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ZEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>ZEngine\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\ZEngine\Layer.cpp">
       <Filter>ZEngine</Filter>

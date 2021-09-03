@@ -12,9 +12,11 @@ out_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 include_dirs = {}
 include_dirs["GLFW"] = "ZEngine/vendor/GLFW/include"
 include_dirs["GLAD"] = "ZEngine/vendor/GLAD/include"
+include_dirs["Imgui"] = "ZEngine/vendor/Imgui"
 
 include "ZEngine/vendor/GLFW"
 include "ZEngine/vendor/GLAD"
+include "ZEngine/vendor/Imgui"
 
 project "ZEngine"
     location "ZEngine"
@@ -39,19 +41,21 @@ project "ZEngine"
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
         "%{include_dirs.GLFW}",
-        "%{include_dirs.GLAD}"
+        "%{include_dirs.GLAD}",
+        "%{include_dirs.Imgui}"
     }
 
     -- link static libraries to ZEngine
     links {
         "GLFW",
         "GLAD",
+        "Imgui",
         "opengl32.lib"
     }
 
     filter "system:windows"
         cppdialect "C++17"
-        staticruntime "On"
+        staticruntime "on"
         systemversion "latest"
 
         defines {

@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>zepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZE_PLATFORM_WINDOWS;ZE_BUILD_DLL;GLFW_INCLUDE_NONE;ZE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\Imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>zepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZE_PLATFORM_WINDOWS;ZE_BUILD_DLL;GLFW_INCLUDE_NONE;ZE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\Imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>zepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZE_PLATFORM_WINDOWS;ZE_BUILD_DLL;GLFW_INCLUDE_NONE;ZE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\GLAD\include;vendor\Imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,7 +152,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\OpenGL\imguiopengl3.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\ZEngine.h" />
     <ClInclude Include="src\ZEngine\Application.h" />
     <ClInclude Include="src\ZEngine\Core.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="src\ZEngine\Events\Event.h" />
     <ClInclude Include="src\ZEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\ZEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\ZEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\ZEngine\Layer.h" />
     <ClInclude Include="src\ZEngine\LayerStack.h" />
     <ClInclude Include="src\ZEngine\Log.h" />
@@ -168,8 +170,10 @@
     <ClInclude Include="src\zepch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imguiopengl3.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\ZEngine\Application.cpp" />
+    <ClCompile Include="src\ZEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\ZEngine\Layer.cpp" />
     <ClCompile Include="src\ZEngine\LayerStack.cpp" />
     <ClCompile Include="src\ZEngine\Log.cpp" />
@@ -183,6 +187,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\GLAD\GLAD.vcxproj">
       <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Imgui\ImGUI.vcxproj">
+      <Project>{80FB640D-EC0F-8DBE-B591-301E216589EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

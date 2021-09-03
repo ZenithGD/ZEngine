@@ -20,6 +20,9 @@ namespace ZEngine {
 		LayerStack _layers;
 
 		bool onWindowClose(WindowCloseEvent& e);
+
+		// Application must be a singleton
+		static Application* _instance;
 		
 	public:
 		Application();
@@ -32,6 +35,9 @@ namespace ZEngine {
 		void popLayer(std::shared_ptr<Layer> layer);
 		void pushOverlay(std::shared_ptr<Layer> layer);
 		void popOverlay(std::shared_ptr<Layer> layer);
+
+		inline Window& getWindow() { return *_wptr; }
+		inline static Application& get() { return *_instance; }
 	};
 
 	// The client must define this function to create an app

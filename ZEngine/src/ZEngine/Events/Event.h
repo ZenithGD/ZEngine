@@ -35,10 +35,10 @@ namespace ZEngine {
 	class ZENGINE_API Event {
 	private:
 		friend class EventDispatcher;
-	protected:
-		// Represents whether this event was handled or not.
-		bool _handled = false;
 	public:
+		
+		bool handled = false;
+
 		// Returns the event type
 		virtual EventType getEventType() const = 0;
 
@@ -53,9 +53,6 @@ namespace ZEngine {
 
 		// Returns true if the event is included in <category>
 		inline bool isInCategory(ZEngine::EventCategory category) { return category & getCategoryFlags(); }
-
-		inline bool isHandled() const { return _handled; }
-		inline void setHandled() { _handled = true; }
 	};
 
 	// Dispatcher for any kind of event
@@ -72,7 +69,7 @@ namespace ZEngine {
 		template <typename T>
 		bool dispatch(EventFunc<T> func) {
 			if (_event.getEventType() == T::getStaticType()) {
-				_event._handled = func(*(T*)&_event);
+				_event.handled = func(*(T*)&_event);
 				return true;
 			}
 			return false;

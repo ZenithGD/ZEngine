@@ -21,8 +21,6 @@ public:
 
 	void onEvent(ZEngine::Event& event) override {
 		ZE_TRACE("{0}", event);
-
-		event.setHandled();
 	}
 };
 

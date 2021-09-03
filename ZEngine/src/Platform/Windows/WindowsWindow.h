@@ -28,7 +28,7 @@ namespace ZEngine {
 		WindowsWindow(const WindowProps& wp);
 		virtual ~WindowsWindow();
 
-		inline int getWidth() const override { return _wdata.height; };
-		inline int getHeight() const override { return _wdata.width; };
+		inline int getWidth() const override { return _wdata.width; };
+		inline int getHeight() const override { return _wdata.height; };
 	};
 }

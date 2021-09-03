@@ -64,7 +64,7 @@ namespace ZEngine {
 			WindowData& data = *((WindowData*)glfwGetWindowUserPointer(w));
 
 			data.width = width;
-			data.height = width;
+			data.height = height;
 
 			WindowResizeEvent event(width, height);
 			data.fn(event);

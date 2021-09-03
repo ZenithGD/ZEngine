@@ -10,6 +10,8 @@ namespace ZEngine {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::_instance = nullptr;
+
 	bool Application::onWindowClose(WindowCloseEvent& e)
 	{
 		_running = false;
@@ -18,7 +20,11 @@ namespace ZEngine {
 
 	Application::Application() 
 		: _layers() {
-		_wptr = std::unique_ptr<Window>(Window::create());
+		ZE_CORE_ASSERT(!_instance, "An application already exists!");
+		_instance = this;
+
+		WindowProps wp(512, 512, "Example App");
+		_wptr = std::unique_ptr<Window>(Window::create(wp));
 		_wptr->setEvCallback(BIND_EVENT_FN(onEvent));
 	}
 
@@ -50,7 +56,7 @@ namespace ZEngine {
 
 		// Propagate event until it gets handled
 		for (auto it = _layers.rbegin(); it != _layers.rend(); ++it) {
-			if (e.isHandled()) break;
+			if (e.handled) break;
 			(*it)->onEvent(e);
 		}
 	}
