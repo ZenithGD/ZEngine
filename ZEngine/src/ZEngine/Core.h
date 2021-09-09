@@ -18,4 +18,6 @@
 	#define ZE_CORE_ASSERT(x, ...)
 #endif
 
+#define ZE_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
 #define MARK_BIT(i) (1 << i)

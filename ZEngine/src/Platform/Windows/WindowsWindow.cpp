@@ -101,6 +101,12 @@ namespace ZEngine {
 			}
 		});
 
+		glfwSetCharCallback(_window, [](GLFWwindow* w, unsigned int character) {
+			WindowData& data = *((WindowData*)glfwGetWindowUserPointer(w));
+			KeyTypedEvent event(character);
+			data.fn(event);
+		});
+
 		glfwSetMouseButtonCallback(_window, [](GLFWwindow* w, int button, int action, int mods) {
 			WindowData& data = *((WindowData*)glfwGetWindowUserPointer(w));
 

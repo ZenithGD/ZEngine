@@ -51,4 +51,18 @@ namespace ZEngine {
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	class ZENGINE_API KeyTypedEvent : public KeyEvent {
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string to_string() const override {
+			std::ostringstream os;
+			os << "KeyTypedEvent: " << _keycode;
+			return os.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }
