@@ -50,3 +50,5 @@ git submodule update --recursive --remote
   * Added window events and GLFW callbacks
 * 02/09/2021:
   * Added application layers and layerstack for selective event handling and updating
+* 03/09/2021:
+  * Integrated ImGUI and demo overlay 
